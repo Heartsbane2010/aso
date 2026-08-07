@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Richmore">
+    <meta name="description" content="Membership Page">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/public/membership.css">
+    <script src="../JS/membership.js" defer></script>
+    <title>Membership</title>
+</head>
+<body>
+    <header class="header">
+        <div class="header-brand">
+            <figure class="figure">
+                <img src="../Images/photo_2026-06-14_17-29-58.jpg" width="80" height="80" alt="ASO Logo" class="img">
+            </figure>
+            <div>
+                <h2 class="logo_h2">ASO Global Mission</h2>
+                <p class="header-tag">Join our community and grow with us.</p>
+            </div>
+        </div>
+        <nav class="header_nav">
+            <ul class="header_ul">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="membership.html" class="active">Membership</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="main">
+        <section class="membership-hero">
+            <div class="hero-copy">
+                <span class="eyebrow">Membership</span>
+                <h1>Become part of ASO Global Mission</h1>
+                <p>Register or sign in to access member resources, events, and prayer support.</p>
+            </div>
+        </section>
+        <article class="container">
+            <div class="toggle-buttons">
+                <button class="toggle-btn active" onclick="switchForm('register')">Register</button>
+                <button class="toggle-btn" onclick="switchForm('login')">Login</button>
+            </div>
+
+            <form id="registerForm" class="form-panel active" onsubmit="return validateRegister(event)">
+                <section class="input-group">
+                    <label for="regEmail">Email Address:</label>
+                    <input type="text" id="regEmail" placeholder="youremail@domain.com" required>
+                    <div id="regEmailError" class="error-msg">Enter a valid email address</div>
+                </section>
+                <section class="input-group">
+                    <label for="regFirstname">First Name:</label>
+                    <input type="text" id="regFirstname" required>
+                    <div id="regFirstnameError" class="error-msg">Alphabets only (3 to 20 characters)</div>
+                </section>
+                <section class="input-group">
+                    <label for="regLastname">Last Name:</label>
+                    <input type="text" id="regLastname" required>
+                    <div id="regLastnameError" class="error-msg">Alphabets only (3 to 20 characters)</div>
+                </section>
+                <section class="input-group">
+                    <label for="regPassword">Password:</label>
+                    <input type="password" id="regPassword" placeholder="Minimum of 8 characters, 1 number, 1 letter" required>
+                    <button type="button" id="toggleRegVisibility" class="toggle-visibility-button">
+                        <svg id="eyeIcon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
+                            <path id="eyeSlashReg" d="M2 2l20 20" stroke="#666" stroke-width="2" />
+                        </svg>
+                    </button>
+                    <div id="regPasswordError" class="error-msg">Must be 8+ characters with 1 letter and 1 number.</div>
+                </section>
+                <button type="submit" class="submit-btn">Create account</button>
+            </form>
+
+            <form id="loginForm" class="form-panel" onsubmit="return validateLogin(event)">
+                <section class="input-group">
+                    <label for="loginEmail">Email Address:</label>
+                    <input type="text" id="loginEmail" placeholder="youremail@domain.com" required>
+                    <div id="loginEmailError" class="error-msg">Please enter a valid email</div>
+                </section>
+                <section class="input-group">
+                    <label for="loginPassword">Password:</label>
+                    <input type="password" id="loginPassword" placeholder="Enter your password" required>
+                    <button type="button" id="toggleLoginVisibility" class="toggle-visibility-button">
+                        <svg id="eyeIcon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
+                            <path id="eyeSlashLogin" d="M2 2l20 20" stroke="#666" stroke-width="2" />
+                        </svg>
+                    </button>
+                    <div id="loginPasswordError" class="error-msg">Password must have a minimum of 8 characters, 1 letter and one number.</div>
+                </section>
+                <button type="submit" class="submit-btn">Login</button>
+            </form>
+        </article>
+    </main>
+</body>
+</html>
