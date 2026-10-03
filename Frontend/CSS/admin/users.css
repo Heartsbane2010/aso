@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+.users-header {
+    align-items: flex-end;
+}
+
+.users-panel {
+    background: rgba(11, 18, 30, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 18px;
+    padding: 1.5rem;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.15);
+}
+
+.table-wrap {
+    overflow-x: auto;
+}
+
+.users-table {
+    width: 100%;
+    border-collapse: collapse;
+    color: #edf5ff;
+}
+
+.users-table th,
+.users-table td {
+    text-align: left;
+    padding: 1rem 0.9rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    font-family: 'Open Sans', sans-serif;
+}
+
+.users-table th {
+    color: #f4f8ff;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.78rem;
+    background: rgba(124, 105, 255, 0.08);
+}
+
+.users-table td {
+    color: #dfeaff;
+    font-size: 0.95rem;
+}
+
+.users-table tbody tr:hover {
+    background: rgba(124, 105, 255, 0.05);
+}
+
+@media (max-width: 640px) {
+    .users-table th,
+    .users-table td {
+        white-space: nowrap;
+        font-size: 0.8rem;
+    }
+}

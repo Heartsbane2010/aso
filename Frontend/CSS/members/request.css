@@ -35,7 +35,21 @@ p, label, textarea, input {
     justify-content: space-between;
     gap: 1rem;
     padding: 1rem 2rem;
-    background: rgba(3, 8, 18, 0.96);
+    background: rgba(4, 6, 17, 0.92);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    backdrop-filter: blur(16px);
+}
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1rem 2rem;
+    background: rgba(4, 6, 17, 0.92);
     border-bottom: 1px solid rgba(255,255,255,0.08);
     backdrop-filter: blur(16px);
 }
@@ -46,9 +60,14 @@ p, label, textarea, input {
     gap: 1rem;
 }
 
+.header-tag {
+    color: #8ad6c4;
+    font-size: 0.93rem;
+}
+
 .figure {
-    width: 64px;
-    height: 64px;
+    width: 66px;
+    height: 66px;
     border-radius: 50%;
     overflow: hidden;
 }
@@ -72,18 +91,23 @@ p, label, textarea, input {
     list-style: none;
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem;
+    gap: 1.1rem;
+}
+
+.header_ul li {
+    display: flex;
+    align-items: center;
 }
 
 .header_ul li a {
-    color: #e8f1ff;
+    color: #e8eefb;
     text-decoration: none;
     font-weight: 600;
 }
 
 .header_ul li a:hover,
 .header_ul li a:focus {
-    color: #bfadff;
+    color: #b38ffb;
 }
 
 .main {

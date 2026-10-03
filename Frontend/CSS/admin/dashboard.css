@@ -1,0 +1,395 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(180deg, #04070f 0%, #0a1120 100%);
+    color: #edf5ff;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+p {
+    font-family: 'Playfair Display', serif;
+    line-height: 1.8;
+    color: #d8e7ff;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1rem 2rem;
+    background: rgba(9, 12, 22, 0.85);
+    backdrop-filter: blur(18px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+.header-brand {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.figure {
+    width: 80px;
+    height: 80px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.logo_h2 {
+    font-size: 1.5rem;
+    color: #f8fbff;
+}
+
+.header-tag {
+    color: #b2d9f7;
+    font-size: 0.9rem;
+    margin-top: 0.25rem;
+}
+
+.header_nav {
+    margin-left: auto;
+}
+
+.header_ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 1.25rem;
+    align-items: center;
+}
+
+.header_ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 700;
+    transition: .3s ease;
+}
+
+.header_ul li a:hover,
+.header_ul li a:focus {
+    color: #b385f6;
+    text-shadow: 0 0 12px rgba(179, 133, 246, 0.5);
+}
+
+.admin-main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.page-intro {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.eyebrow {
+    display: inline-block;
+    margin-bottom: 0.75rem;
+    letter-spacing: 0.18em;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    color: #b385f6;
+    font-weight: 700;
+}
+
+.page-intro h1 {
+    font-size: clamp(2.1rem, 3vw, 3rem);
+    color: #f4f8ff;
+}
+
+.primary-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: linear-gradient(135deg, #7c69ff 0%, #ad8bff 100%);
+    color: #fff;
+    border: none;
+    border-radius: 999px;
+    padding: 0.85rem 1.4rem;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(124, 105, 255, 0.35);
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.donations-grid {
+    grid-template-columns: repeat(2, minmax(260px, 1fr));
+}
+
+.stat-card,
+.attendance-panel,
+.prayers-panel {
+    background: rgba(11, 18, 30, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 18px;
+    padding: 1.5rem;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.15);
+}
+
+.stat-card {
+    min-height: 210px;
+}
+
+.stat-card.accent {
+    background: linear-gradient(135deg, rgba(124, 105, 255, 0.2), rgba(15, 22, 36, 0.95));
+}
+
+.stat-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.stat-label {
+    color: #dfeaff;
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.stat-top i {
+    color: #b385f6;
+    font-size: 1.4rem;
+}
+
+.stat-value {
+    display: block;
+    color: #fff;
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: -0.05em;
+    margin-bottom: 0.5rem;
+}
+
+.stat-meta {
+    color: #b7c8dc;
+    font-size: 0.9rem;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.attendance-panel {
+    margin-top: 1rem;
+}
+
+.panel-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.panel-heading h2 {
+    font-size: 1.5rem;
+    color: #f7faff;
+}
+
+.panel-badge {
+    background: rgba(124, 105, 255, 0.15);
+    border: 1px solid rgba(124, 105, 255, 0.3);
+    color: #c9b6ff;
+    border-radius: 999px;
+    padding: 0.5rem 0.9rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.attendance-list {
+    display: grid;
+    gap: 1rem;
+}
+
+.attendance-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.attendance-item:last-child {
+    border-bottom: none;
+}
+
+.attendance-item h3 {
+    font-size: 1.1rem;
+    color: #f6f9ff;
+    margin-bottom: 0.3rem;
+}
+
+.attendance-item p {
+    color: #b7c8dc;
+    font-size: 0.9rem;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.attendance-item strong {
+    font-size: clamp(1.4rem, 2vw, 2.2rem);
+    color: #b385f6;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.prayers-header {
+    align-items: flex-end;
+}
+
+.requests-total {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3rem;
+    background: rgba(124, 105, 255, 0.15);
+    border: 1px solid rgba(124, 105, 255, 0.3);
+    padding: 1rem 1.2rem;
+    border-radius: 14px;
+    min-width: 150px;
+}
+
+.requests-total span {
+    color: #d8e7ff;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.requests-total strong {
+    font-size: 2rem;
+    color: #fff;
+}
+
+.prayers-panel {
+    margin-top: 1rem;
+}
+
+.prayer-request {
+    padding: 1.25rem 0;
+}
+
+.prayer-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 0.75rem;
+}
+
+.prayer-meta h3 {
+    font-size: 1.1rem;
+    color: #f6f9ff;
+}
+
+.prayer-meta time {
+    color: #aebfd8;
+    font-size: 0.8rem;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.prayer-request h4 {
+    color: #b385f6;
+    font-size: 1.1rem;
+    margin-bottom: 0.6rem;
+}
+
+.prayer-request p {
+    color: #dfeaff;
+    font-size: 0.95rem;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.prayers-panel hr {
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    margin: 0.5rem 0;
+}
+
+.footer {
+    padding: 2rem 1.5rem 3rem;
+    text-align: center;
+}
+
+.last-line {
+    color: #8aa0c2;
+    font-size: 0.9rem;
+    font-family: 'Open Sans', sans-serif;
+}
+
+@media (max-width: 820px) {
+    .stats-grid,
+    .donations-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .page-intro,
+    .panel-heading,
+    .prayer-meta,
+    .attendance-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .page-intro {
+        margin-bottom: 1.5rem;
+    }
+
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 560px) {
+    .admin-main {
+        padding: 1.25rem 1rem 2rem;
+    }
+
+    .header {
+        padding: 1rem;
+    }
+
+    .header_ul {
+        gap: 0.85rem;
+    }
+
+    .primary-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}

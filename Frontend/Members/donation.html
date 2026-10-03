@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Richmore">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A.S.O Global Mission Website">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/members/donation.css">
+    <title>ASO Donate</title>
+</head>
+<body>
+    <header class="member-header">
+        <div class="brand-group">
+            <figure class="brand-mark">
+                <img src="../Images/photo_2026-06-14_17-29-58.jpg" alt="ASO Global Mission logo">
+            </figure>
+            <div class="brand-copy">
+                <h1>ASO Global Mission</h1>
+            </div>
+        </div>
+        <a class="home-link" href="dashboard.html">Back to dashboard</a>
+    </header>
+
+    <main class="donation-page">
+        <section class="hero-banner" aria-label="Donation banner">
+            <div class="hero-banner__image">
+                <img src="../images/stock-photo-christian-hands-giving-the-bible-and-evangelizing-someone-in-a-field-during-a-beautiful-sunset-2483384021.jpg" alt="A Christian sharing a Bible with someone outdoors">
+                <div class="banner-copy">
+                    <span class="eyebrow">Give with purpose</span>
+                    <h2>Your generosity helps us reach more people with the love of Christ!</h2>
+                </div>
+            </div>
+        </section>
+
+        <section class="donation-layout">
+            <div class="donation-card donation-card--form">
+                <div class="card-heading">
+                    <span class="eyebrow accent">Secure giving</span>
+                    <h3>Make a donation</h3>
+                </div>
+
+                <form class="donation-form" action="#" method="post">
+                    <div class="field-group">
+                        <label for="fullName">Full name <span class="required-indicator">(required)</span></label>
+                        <input id="fullName" name="fullName" type="text" value="Richmore Agyemang" placeholder="Enter your full name" required>
+                    </div>
+
+                    <div class="field-grid">
+                        <div class="field-group">
+                            <label for="email">Email address <span class="required-indicator">(required)</span></label>
+                            <input id="email" name="email" type="email" value="richmore@example.com" placeholder="Email address" required>
+                        </div>
+                        <div class="field-group">
+                            <label for="phone">Phone number <span class="required-indicator">(required)</span></label>
+                            <input id="phone" name="phone" type="tel" value="+233 555 000 100" placeholder="Phone number" required>
+                        </div>
+                    </div>
+
+                    <div class="field-grid">
+                        <div class="field-group">
+                            <label for="country">Country <span class="optional-indicator">(optional)</span></label>
+                            <select id="country" name="country" class="dark-select">
+                                <option selected>Ghana</option>
+                                <option>Nigeria</option>
+                                <option>Kenya</option>
+                                <option>United States</option>
+                                <option>United Kingdom</option>
+                            </select>
+                        </div>
+                        <div class="field-group">
+                            <label for="city">City <span class="optional-indicator">(optional)</span></label>
+                            <input id="city" name="city" type="text" value="Accra" placeholder="City">
+                        </div>
+                    </div>
+
+                    <div class="field-group">
+                        <label>Choose an amount <span class="required-indicator">(required)</span></label>
+                        <div class="amount-selector" aria-label="Donation amount selector">
+                            <button class="amount-option" type="button">GHS 50</button>
+                            <button class="amount-option active" type="button">GHS 100</button>
+                            <button class="amount-option" type="button">GHS 250</button>
+                            <button class="amount-option" type="button">GHS 500</button>
+                        </div>
+                        <div class="custom-amount">
+                            <label for="customAmount">Custom amount <span class="optional-indicator">(optional)</span></label>
+                            <input id="customAmount" name="customAmount" type="number" min="10" step="10" value="100" placeholder="Enter amount">
+                        </div>
+                    </div>
+
+                    <div class="field-group">
+                        <label>Payment frequency <span class="required-indicator">(required)</span></label>
+                        <div class="toggle-row">
+                            <label class="option-chip">
+                                <input type="radio" name="frequency" checked>
+                                <span>One-time</span>
+                            </label>
+                            <label class="option-chip">
+                                <input type="radio" name="frequency">
+                                <span>Recurring</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="field-group">
+                        <label for="dedication">Prayer note or dedication <span class="optional-indicator">(optional)</span></label>
+                        <textarea id="dedication" name="dedication" rows="4" placeholder="Optional: leave a note or prayer for the mission team"></textarea>
+                    </div>
+
+                    <button class="submit-btn" type="submit">Proceed to Flutterwave</button>
+                </form>
+            </div>
+
+            <aside class="donation-card donation-sidebar">
+                <div class="impact-card">
+                    <h3>Donation summary</h3>
+                    <div class="summary-row">
+                        <span>Selected amount</span>
+                        <strong>GHS 100</strong>
+                    </div>
+                    <div class="summary-row">
+                        <span>Frequency</span>
+                        <strong>One-time</strong>
+                    </div>
+                    <div class="summary-row">
+                        <span>Impact</span>
+                        <strong>Supports outreach mission</strong>
+                    </div>
+                </div>
+
+                <div class="history-card">
+                    <h3>Receipts & giving history</h3>
+                    <ul class="history-list">
+                        <li>
+                            <span>Jun 12</span>
+                            <strong>GHS 50</strong>
+                            <em>One-time</em>
+                        </li>
+                        <li>
+                            <span>May 18</span>
+                            <strong>GHS 100</strong>
+                            <em>Recurring</em>
+                        </li>
+                        <li>
+                            <span>Apr 21</span>
+                            <strong>GHS 75</strong>
+                            <em>One-time</em>
+                        </li>
+                    </ul>
+                    <a href="#" class="history-link">Download all receipts</a>
+                </div>
+            </aside>
+        </section>
+    </main>
+
+    <footer class="member-footer">
+        <p>© 2026 ASO Global Mission. Your generosity helps us reach new communities with hope.</p>
+    </footer>
+</body>
+</html>

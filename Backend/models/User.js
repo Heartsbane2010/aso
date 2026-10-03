@@ -19,6 +19,32 @@ const userSchema = new schema({
         type: String,
         required: true
     },
+    phone: {
+        type: String,
+        required: false
+    },
+    gender: {
+        type: String,
+        required: false
+    },
+    dateOfBirth: {
+        type: Date,
+        required: false
+    },
+    membershipDate: {
+        type: Date,
+        default: Date.now
+    },
+    churchInvolvement: {
+        type: String,
+        required: false
+    },
+    profilePicture: { type: String },
+    preferences: {
+        emailNewsletter: { type: Boolean, default: true },
+        textAlerts: { type: Boolean, default: true },
+        eventNotifications: { type: Boolean, default: true }
+    },
     roles: {
         User: {
             type: Number,

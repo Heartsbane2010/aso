@@ -409,6 +409,85 @@ p {
 .slider-container .fifth { background-image: url('../../images/images (5).jpeg'); }
 .slider-container .sixth { background-image: url('../../images/images (6).jpeg'); }
 
+.donations {
+    background: #0a0f1d;
+    padding: 3rem 1rem 4rem;
+}
+
+.donations-bg-img {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    max-width: 1200px;
+    min-height: 360px;
+    margin: 0 auto;
+    padding: clamp(1.5rem, 3vw, 2.4rem);
+    border-radius: 28px;
+    background-image: linear-gradient(90deg, rgba(4, 9, 18, 0.78) 0%, rgba(4, 9, 18, 0.58) 30%, rgba(4, 9, 18, 0.68) 100%), url('../../images/istockphoto-donation-2048x2048.jpg');
+    background-size: cover;
+    background-position: center;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08), 0 30px 60px rgba(0, 0, 0, 0.35);
+    overflow: hidden;
+}
+
+.donation-panel {
+    position: relative;
+    z-index: 1;
+    max-width: 520px;
+    width: min(100%, 520px);
+    background: rgba(13, 17, 29, 0.6);
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 24px;
+    padding: clamp(1.4rem, 2.5vw, 2.4rem);
+    box-shadow: 0 18px 38px rgba(0, 0, 0, 0.22);
+}
+
+.donation-panel h2 {
+    font-size: clamp(2rem, 3vw, 3rem);
+    line-height: 1.15;
+    color: #f7fafe;
+    margin-bottom: 1rem;
+}
+
+.donation-panel p {
+    margin-bottom: 1.5rem;
+    color: #dfe9ff;
+    line-height: 1.8;
+    font-size: 1rem;
+    font-family: "Open Sans", "Segoe UI", sans-serif;
+}
+
+.donate-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 999px;
+    padding: 0.95rem 1.5rem;
+    background: linear-gradient(135deg, #e8c56c 0%, #d5a63f 100%);
+    color: #0b1220;
+    font-size: 0.96rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(216, 172, 67, 0.35);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
+
+.donate-btn:hover,
+.donate-btn:focus {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 28px rgba(216, 172, 67, 0.45);
+    filter: brightness(1.05);
+}
+
+.donate-btn a {
+    text-decoration: none;
+}
+
 .footer {
     padding: 3rem 1rem 2rem;
     background: #090b17;
@@ -495,6 +574,14 @@ p {
 
     .hero-actions {
         justify-content: center;
+    }
+
+    .donations-bg-img {
+        justify-content: center;
+    }
+
+    .donation-panel {
+        width: 100%;
     }
 
     .preach-container,

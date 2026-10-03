@@ -10,16 +10,21 @@
 </head>
 <body>
     <header class="header">
-        <figure class="figure">
-            <img src="../Images/photo_2026-06-14_17-29-58.jpg" width="80" height="80" alt="ASO Logo" class="img">
-        </figure>
-        <h2 class="logo_h2">ASO Global Mission</h2>
+        <div class="header-brand">
+            <figure class="figure">
+                <img src="../Images/photo_2026-06-14_17-29-58.jpg" width="80" height="80" alt="ASO Logo" class="img">
+            </figure>
+            <div>
+                <h2 class="logo_h2">ASO Global Mission</h2>
+                <p class="header-tag">Reach out for prayer, support, and connection.</p>
+            </div>
+        </div>
         <nav class="header_nav">
             <ul class="header_ul">
-                <li class="marginal"><a href="index.html">Home</a></li>
-                <li class="marginal"><a href="about.html">About Us</a></li>
-                <li class="marginal"><a href="contact.html">Contact Us</a></li>
-                <li class="marginal"><a href="request.html">Prayer Request</a></li>
+                <li><a href="dashboard.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="request.html">Prayer Request</a></li>
                 <li><a href="profile.html">
                     <img src="../images/pngfind.com-placeholder-png-6104451.png" width="40" height="40" alt="Profile Picture" class="profile_img" title="Profile">
                 </a></li>
@@ -36,6 +41,9 @@
 
                 <label class="request_label" for="email">Email Address:</label>
                 <input class="request_input" type="email" id="email" name="email" placeholder="Enter your Email" required>
+                
+                <label class="request_label" for="title">Prayer Title:</label>
+                <input class="request_input" type="text" id="title" name="title" placeholder="Enter the title of your prayer request" required>
 
                 <label class="request_label" for="request">Prayer Request:</label>
                 <textarea class="request_textarea" id="request" name="request" rows="9" placeholder="Your Request" required></textarea>
@@ -51,5 +59,45 @@
         </p>
         <p>&copy; 2024 ASO Global Mission. All rights reserved.</p>
     </footer>
+    <script>
+        document.querySelector('.request_form').addEventListener('submit', async function(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            const fullname = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const title = document.getElementById('title').value;
+            const request = document.getElementById('request').value;
+
+            const token = localStorage.getItem('accessToken') || localStorage.getItem('authToken');
+            try {
+                const response = await fetch('http://localhost:4000/prayer-request', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${token}`
+                    },
+                    body: JSON.stringify({ fullname, email, title, request })
+                });
+
+                if (response.status === 401 || response.status === 403) {
+                    alert('Session expired. Please log in.');
+                    window.location.href = '../Public/membership.html'; // Redirect to login page
+                    return;
+                }
+
+                if (response.ok) {
+                    alert('Your prayer request has been submitted successfully!');
+                    // Optionally, reset the form
+                    document.querySelector('.request_form').reset();
+                } else {
+                    const errorData = await response.json();
+                    alert(`Error: ${errorData.message}`);
+                }
+            } catch (error) {
+                console.error('Error submitting prayer request:', error);
+                alert('An error occurred while submitting your prayer request. Please try again later.');
+            }
+        });
+    </script>
 </body>
 </html>

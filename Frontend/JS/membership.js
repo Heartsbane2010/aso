@@ -71,7 +71,7 @@ function validateRegister(event) {
 
     if (isValid) alert('You have registered successfully!'); // Placeholder for successful registration action
     return isValid;
-};/* If the value of our elements does not match the already established regex, we return our reusable function "toggleError" and passing in the elemnet's id and setting the value to true, so our error message can be displayed. If the regex conditions are met, we hide the error message with toggleError, and set isValid to true with an alert */
+};/* If the value of our elements does not match the already established regex, we return our reusable function "toggleError" and passing in the element's id and setting the value to true, so our error message can be displayed. If the regex conditions are met, we hide the error message with toggleError, and set isValid to true with an alert */
 
 //Validating Login Form
 function validateLogin(event) {
@@ -142,16 +142,20 @@ const loginUser = async (e) => {
     const pwd = document.getElementById('loginPassword').value;
 
     try {
-        const res = await fetch('/login', {
+        const res = await fetch('http://localhost:4000/login', {
         method: 'POST',
-        headers: { 'Content-Type': 'applicatrion/json'},
+        headers: { 'Content-Type': 'application/json'},
         body: JSON.stringify({ email, pwd })
     });
-    const data = res.json();
+    const data = await res.json();
 
     if (res.ok) {
+        const accessToken = data.accessToken || data.authToken;
+        localStorage.setItem('accessToken', accessToken);
+        localStorage.setItem('authToken', accessToken); // backward compatibility for older code
+        localStorage.setItem('userId', data.userId);
         alert('Login Successful');
-        console.log(data);//contains user + token
+        console.log(data);//contains user id + token
         window.location.href = '../Members/dashboard.html';//Redirect to members dashboard upon successful login
     } else {
         toggleError('loginEmailError', true);
@@ -179,7 +183,6 @@ toggleRegVisibility.addEventListener('click', () => {
         eyeSlashReg.style.display = 'block';//Show the slash icon when password is hidden
     }
 });
-
 
 
 //loginPassword Visibility Toggle

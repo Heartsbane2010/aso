@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="author" content="Richmore">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Admin Dashboard - ASO Global Mission">
+        <link rel="stylesheet" href="../CSS/admin/dashboard.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.4/css/all.min.css" integrity="sha512-zY6g1+XcCdgE+P7seUXMR7oQFSgOgcKynjriWmJx7sIyjxUpSVfD8Zt8Xmk3FkDyv6cpZ255zTV7fYmqVpbKcw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script src="../JS/app.js" defer></script>
+        <title>Admin Dashboard | ASO Global Mission</title>
+    </head>
+    <body>
+        <header class="header">
+            <div class="header-brand">
+                <figure class="figure">
+                    <img src="../Images/photo_2026-06-14_17-29-58.jpg" width="80" height="80" alt="ASO Logo" class="img">
+                </figure>
+                <div>
+                    <h2 class="logo_h2">ASO Global Mission</h2>
+                    <p class="header-tag">Admin Dashboard</p>
+                </div>
+            </div>
+            <nav class="header_nav">
+                <ul class="header_ul">
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="prayers.html">Prayers</a></li>
+                    <li><a href="users.html">Users</a></li>
+                    <li><a href="settings.html">Settings</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="admin-main">
+            <section class="page-intro">
+                <div>
+                    <span class="eyebrow">Overview</span>
+                    <h1>Church Administration</h1>
+                </div>
+                <button class="primary-btn"><i class="fas fa-download"></i> Export Report</button>
+            </section>
+
+            <section class="stats-grid" aria-label="Member statistics overview">
+                <article class="stat-card accent">
+                    <div class="stat-top">
+                        <span class="stat-label">Active Users</span>
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <strong class="stat-value">1,284</strong>
+                    <p class="stat-meta">Live users currently engaging on the site</p>
+                </article>
+
+                <article class="stat-card">
+                    <div class="stat-top">
+                        <span class="stat-label">Registered Members</span>
+                        <i class="fas fa-user-plus"></i>
+                    </div>
+                    <strong class="stat-value">3,620</strong>
+                    <p class="stat-meta">Total members registered across the church platform</p>
+                </article>
+
+                <article class="stat-card">
+                    <div class="stat-top">
+                        <span class="stat-label">Members Logged In</span>
+                        <i class="fas fa-circle-user"></i>
+                    </div>
+                    <strong class="stat-value">438</strong>
+                    <p class="stat-meta">Members actively signed in today</p>
+                </article>
+            </section>
+
+            <section class="stats-grid donations-grid" aria-label="Donation overview">
+                <article class="stat-card donation-card">
+                    <div class="stat-top">
+                        <span class="stat-label">Donations in Naira</span>
+                        <i class="fas fa-naira-sign"></i>
+                    </div>
+                    <strong class="stat-value">₦ 3,245,000</strong>
+                    <p class="stat-meta">Total donations recorded in Naira from backend</p>
+                </article>
+
+                <article class="stat-card donation-card">
+                    <div class="stat-top">
+                        <span class="stat-label">Donations in Dollar</span>
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <strong class="stat-value">$ 12,480</strong>
+                    <p class="stat-meta">Total donations recorded in USD from backend</p>
+                </article>
+            </section>
+
+            <section class="attendance-panel">
+                <div class="panel-heading">
+                    <h2>Weekly In-Person Attendance</h2>
+                    <span class="panel-badge">Current Week</span>
+                </div>
+
+                <div class="attendance-list">
+                    <div class="attendance-item">
+                        <div>
+                            <h3>Tuesday Life Building Hour</h3>
+                            <p>Mid-week spiritual growth and prayer gathering</p>
+                        </div>
+                        <strong>146</strong>
+                    </div>
+
+                    <div class="attendance-item">
+                        <div>
+                            <h3>Thursday Life Building Hour</h3>
+                            <p>Prayer, teaching, and discipleship session</p>
+                        </div>
+                        <strong>184</strong>
+                    </div>
+
+                    <div class="attendance-item">
+                        <div>
+                            <h3>Friday Vigil (Last Friday of the Month)</h3>
+                            <p>Night of worship and intercession</p>
+                        </div>
+                        <strong>268</strong>
+                    </div>
+
+                    <div class="attendance-item">
+                        <div>
+                            <h3>Sunday Service</h3>
+                            <p>Main worship service and outreach connection</p>
+                        </div>
+                        <strong>542</strong>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p class="last-line">&copy; 2024 ASO Global Mission. All rights reserved.</p>
+        </footer>
+    </body>
+</html>

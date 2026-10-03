@@ -22,6 +22,7 @@ const handleLogin = async (req, res) => {
         const accessToken = jwt.sign(
             {
                 "UserInfo": {
+                    "id": foundUser._id,
                     "email": foundUser.email,
                     "roles": roles
                 }
@@ -33,19 +34,19 @@ const handleLogin = async (req, res) => {
         const refreshToken = jwt.sign(
             { "email": foundUser.email },
             process.env.REFRESH_TOKEN_SECRET,
-            {expiresIn: '5d'}
+            {expiresIn: '7d'}
         );
 
         //Save Refresh token with current user to DB
         foundUser.refreshToken = refreshToken;
         const result = await foundUser.save();
-        console.log(result);
+
 
         //Send refreshToken as an http only cookie
         res.cookie('jwt', refreshToken, { httpOnly: true, sameSite: 'none', maxAge: 24 * 60 * 60 * 1000 });
 
         //Save accessToken as json for subsequent authentications
-        res.json({ accessToken });
+        res.json({ accessToken, userId: foundUser._id });
     } else {
         return res.status(401).json({ message: "Unauthorized" });
     }

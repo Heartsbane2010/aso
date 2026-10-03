@@ -3,11 +3,275 @@
 <head>
     <meta charset="UTF-8">
     <meta name="author" content="Richmore">
-    <meta name="description" content="Profile Page">
+    <meta name="description" content="User Profile - ASO Global Mission">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile</title>
+    <link rel="stylesheet" href="../CSS/members/profile.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.7.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>My Profile - ASO Global Mission</title>
+    <script src="../JS/profile.js" defer></script>
 </head>
 <body>
-    
+    <!-- Header Navigation -->
+    <header class="header">
+        <figure class="figure">
+            <img src="../Images/photo_2026-06-14_17-29-58.jpg" width="80" height="80" alt="ASO Logo" class="img">
+        </figure>
+        <a href="dashboard.html" class="back-home">
+            <i class="fas fa-arrow-left"></i> Back to Home
+        </a>
+    </header>
+
+    <main class="main">
+        <!-- Hero Section with Welcoming Image -->
+        <section class="profile-header">
+            <div class="header-banner">
+                <img src="../images/jesus-welcoming.jpg" alt="Welcoming hands" class="banner-image">
+                <div class="banner-overlay"></div>
+            </div>
+
+            <!-- Profile Picture Section -->
+            <div class="profile-picture-container">
+                <div class="profile-pic-wrapper">
+                    <img src="../images/pngfind.com-placeholder-png-6104451.png" alt="User Profile Picture" id="profilePicture" class="profile-picture">
+                    <button type="button" class="upload-btn" id="uploadBtn" title="Upload Profile Picture">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                    <input type="file" id="fileInput" class="file-input" accept="image/*" style="display: none;">
+                </div>
+            </div>
+
+            <!-- Welcome Section -->
+            <div class="profile-welcome">
+                <h1 class="welcome-text">
+                    <span class="welcome-greeting">Welcome</span>
+                    <span class="user-name" id="userName"></span>
+                </h1>
+            </div>
+        </section>
+
+        <!-- User Information Section -->
+        <section class="user-info-section">
+            <header class="section-header">
+                <h2><i class="fas fa-user-circle"></i> Personal Information</h2>
+            </header>
+            <article class="info-card">
+                <div class="info-grid">
+                    <!-- First Name -->
+                    <div class="info-field">
+                        <label for="firstName">First Name</label>
+                        <input type="text" id="firstName" value="John" readonly>
+                    </div>
+
+                    <!-- Full Name -->
+                    <div class="info-field">
+                        <label for="lastName">Last Name</label>
+                        <input type="text" id="lastName" value="Doe" readonly>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="info-field">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" value="john.doe@example.com" readonly>
+                    </div>
+
+                    <!-- Phone Number (Optional) -->
+                    <div class="info-field">
+                        <label for="phone">
+                            Phone Number
+                            <span class="optional-flag">(Optional)</span>
+                        </label>
+                        <input type="tel" id="phone" placeholder="+1 (555) 000-0000">
+                    </div>
+
+                    <!-- Gender (Optional) -->
+                    <div class="info-field">
+                        <label for="gender">
+                            Gender
+                            <span class="optional-flag">(Optional)</span>
+                        </label>
+                        <select id="gender" class="gender">
+                            <option value="">Select Gender</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="other">Other</option>
+                            <option value="prefer-not">Prefer not to say</option>
+                        </select>
+                    </div>
+
+                    <!-- Date of Birth (Optional) -->
+                    <div class="info-field">
+                        <label for="dob">
+                            Date of Birth
+                            <span class="optional-flag">(Optional)</span>
+                        </label>
+                        <input type="date" id="dob">
+                    </div>
+
+                    <!-- Church Involvement Role -->
+                    <div class="info-field">
+                        <label for="churchRole">Church Involvement (Role)</label>
+                        <select id="churchRole" class="churchRole">
+                            <option value="Member">Member</option>
+                            <option value="Usher">Usher</option>
+                            <option value="Admin">Admin</option>
+                            <option value="Prayer Warrior">Prayer Warrior</option>
+                            <option value="Choir">Choir</option>
+                        </select>
+                    </div>
+
+                    <!-- Church Membership Date -->
+                    <div class="info-field">
+                        <label for="membershipDate">Member Since</label>
+                        <input type="date" id="membershipDate" value="2024-01-15" readonly>
+                    </div>
+                </div>
+                <button class="btn btn-primary" id="editInfoBtn">
+                    <i class="fas fa-edit"></i> Edit Information
+                </button>
+            </article>
+        </section>
+
+        <!-- Prayer Requests Section -->
+        <section class="prayer-section">
+            <header class="section-header">
+                <h2><i class="fas fa-hands-praying"></i> My Prayer Requests</h2>
+            </header>
+            <article class="prayer-requests-container" id="prayerRequestsContainer">
+                <!-- Prayer requests will be dynamically loaded from database -->
+                <div class="prayer-request-item">
+                    <h3 class="prayer-title">Healing and Strength</h3>
+                    <p class="prayer-content">
+                        Please pray for my mother's speedy recovery from her recent surgery. 
+                        We trust in God's healing power and believe in His love and compassion.
+                    </p>
+                    <time class="prayer-timestamp">
+                        <i class="fas fa-calendar-alt"></i> January 15, 2024 at 2:30 PM
+                    </time>
+                </div>
+                <hr class="prayer-divider">
+
+                <div class="prayer-request-item">
+                    <h3 class="prayer-title">Guidance for New Job</h3>
+                    <p class="prayer-content">
+                        I have been offered a new position at work and need wisdom to make the right decision. 
+                        Please pray that God guides my steps and leads me toward His purpose.
+                    </p>
+                    <time class="prayer-timestamp">
+                        <i class="fas fa-calendar-alt"></i> January 10, 2024 at 11:15 AM
+                    </time>
+                </div>
+                <hr class="prayer-divider">
+
+                <div class="prayer-request-item">
+                    <h3 class="prayer-title">Family Unity</h3>
+                    <p class="prayer-content">
+                        My family is going through some tough times and we've been distant lately. 
+                        I pray that God restores our bond and brings us closer together in love and understanding.
+                    </p>
+                    <time class="prayer-timestamp">
+                        <i class="fas fa-calendar-alt"></i> January 5, 2024 at 6:45 PM
+                    </time>
+                </div>
+            </article>
+                <button class="btn btn-secondary">
+                    <i class="fas fa-plus"></i> Submit New Prayer Request
+            </button>
+        </section>
+
+        <!-- Security and Preferences Section -->
+        <section class="preferences-section">
+            <header class="section-header">
+                <h2><i class="fas fa-shield-alt"></i> Preferences & Security</h2>
+            </header>
+
+            <!-- Communication Preferences -->
+            <article class="preferences-card">
+                <h3 class="card-title">
+                    <i class="fas fa-envelope"></i> Communication Preferences
+                </h3>
+                <div class="preference-option">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="emailNewsletter" checked>
+                        <span class="checkbox-custom"></span>
+                        <span class="preference-text">Receive email newsletters and updates</span>
+                    </label>
+                </div>
+                <div class="preference-option">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="textAlerts">
+                        <span class="checkbox-custom"></span>
+                        <span class="preference-text">Receive text message alerts for urgent prayer requests</span>
+                    </label>
+                </div>
+                <div class="preference-option">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="eventNotifications" checked>
+                        <span class="checkbox-custom"></span>
+                        <span class="preference-text">Notify me about upcoming events and gatherings</span>
+                    </label>
+                </div>
+                <button class="btn btn-small">
+                    <i class="fas fa-save"></i> Save Preferences
+                </button>
+            </article>
+
+            <!-- Donations Portal -->
+            <article class="preferences-card">
+                <h3 class="card-title">
+                    <i class="fas fa-heart"></i> Support ASO Global Mission
+                </h3>
+                <p class="card-description">
+                    Your generous contributions help us continue our mission of faith, service, and community outreach.
+                </p>
+                <div class="donation-options">
+                    <button class="btn btn-donation">
+                        <i class="fas fa-hand-holding-heart"></i> One-Time Donation
+                    </button>
+                    <button class="btn btn-donation">
+                        <i class="fas fa-redo-alt"></i> Set Up Monthly Support
+                    </button>
+                </div>
+            </article>
+
+            <!-- Account Security -->
+            <article class="preferences-card">
+                <h3 class="card-title">
+                    <i class="fas fa-lock"></i> Account Security
+                </h3>
+                <div class="security-option">
+                    <div class="security-info">
+                        <h4>Password</h4>
+                        <p>Last changed 60 days ago</p>
+                    </div>
+                    <button class="btn btn-small">
+                        <i class="fas fa-key"></i> Change Password
+                    </button>
+                </div>
+                <hr>
+                <div class="security-option">
+                    <div class="security-info">
+                        <h4>Two-Factor Authentication</h4>
+                        <p>Enhance your account security with 2FA</p>
+                    </div>
+                    <label class="toggle-switch">
+                        <input type="checkbox">
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+            </article>
+
+            <!-- Logout Button -->
+            <div class="logout-container">
+                <button class="btn btn-logout" id="logoutBtn">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p class="last-line">&copy; 2024 ASO Global Mission. All rights reserved.</p>
+    </footer>
 </body>
 </html>
